@@ -1,0 +1,113 @@
+{
+  "cities": [
+    {
+      "id": "cd3f",
+      "cityName": "Castello de la Plana",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-03-04T08:44:10.684Z",
+      "notes": "",
+      "position": {
+        "lat": "40.01119313270403",
+        "lng": "-0.014435189587558296"
+      }
+    },
+    {
+      "id": "7598",
+      "cityName": "Castello de la Plana",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-03-04T08:52:17.929Z",
+      "notes": "",
+      "position": {
+        "lat": "40.00435776486463",
+        "lng": "-0.014778205793957168"
+      }
+    },
+    {
+      "id": "b64e",
+      "cityName": "Benicassim",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-03-04T08:52:49.581Z",
+      "notes": "",
+      "position": {
+        "lat": "40.06652238761309",
+        "lng": "0.02450971828561688"
+      }
+    },
+    {
+      "id": "696c",
+      "cityName": "San Jose del Monte",
+      "country": "Philippines (the)",
+      "emoji": "🇵🇭",
+      "date": "2026-03-04T08:55:09.637Z",
+      "notes": "",
+      "position": {
+        "lat": "14.849505136799976",
+        "lng": "121.03320120456637"
+      }
+    },
+    {
+      "id": "7246",
+      "cityName": "Marilao",
+      "country": "Philippines (the)",
+      "emoji": "🇵🇭",
+      "date": "2026-03-04T09:14:00.910Z",
+      "notes": "",
+      "position": {
+        "lat": "14.79433545605471",
+        "lng": "121.00633161394542"
+      }
+    },
+    {
+      "id": "f0ae",
+      "cityName": "Castello de la Plana",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-03-04T12:17:05.506Z",
+      "notes": "",
+      "position": {
+        "lat": "40.046380519130274",
+        "lng": "-0.011512627649561404"
+      }
+    },
+    {
+      "id": "c16a",
+      "cityName": "Castello de la Plana",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-03-04T12:17:18.626Z",
+      "notes": "",
+      "position": {
+        "lat": "40.046396862362975",
+        "lng": "-0.011438085693074031"
+      }
+    },
+    {
+      "id": "c975",
+      "cityName": "Castello de la Plana",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2026-03-08T01:35:40.102Z",
+      "notes": "",
+      "position": {
+        "lat": "40.003686879972534",
+        "lng": "-0.03587722778320313"
+      }
+    },
+    {
+      "id": "6c8f",
+      "cityName": "Balagtas (Bigaa)",
+      "country": "Philippines (the)",
+      "emoji": "🇵🇭",
+      "date": "2026-03-08T01:35:46.971Z",
+      "notes": "",
+      "position": {
+        "lat": "14.854916567950852",
+        "lng": "120.9103892381161"
+      }
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
