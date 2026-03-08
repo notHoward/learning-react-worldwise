@@ -1,83 +1,112 @@
-✅ Skills & Concepts Applied
-useReducer
-Both CitiesContext and FakeAuth use useReducer to manage complex state transitions. Actions like loading data, creating or deleting cities, and logging in/out are dispatched to a reducer that keeps state immutable and predictable.
+## ✅ Skills & Concepts Applied
 
-Useful for centralizing state logic and making updates traceable in medium‑to‑large applications.
+### useReducer
+Both `CitiesContext` and `FakeAuth` use **useReducer** to manage complex state transitions.  
+Actions like loading data, creating or deleting cities, and logging in/out are dispatched to a reducer that keeps state immutable and predictable.
 
-useContext / Context API
-The app exposes CitiesProvider and FakeAuthProvider to wrap the component tree and supply state & actions via useCities() and useFakeAuth() hooks.
+This approach centralizes state logic and makes updates easier to track in medium-to-large applications.
 
-Context eliminates prop‑drilling and is ideal for global data like user info or shared resources.
+---
 
-Protected Routes for authentication
-ProtectedRoute component checks authentication status (from context) and redirects unauthenticated users with useNavigate.
+### useContext / Context API
+The application exposes `CitiesProvider` and `FakeAuthProvider` to wrap the component tree and supply state and actions via custom hooks like `useCities()` and `useFakeAuth()`.
 
-Essential for gating sensitive UI and ensuring only authorized users access certain routes.
+Context removes the need for prop-drilling and is useful for global data such as authentication state or shared resources.
 
-Nested Routes using React Router and Outlet
-Routes under /app are nested; SideBar contains an <Outlet /> to render child views such as city list, details, and forms.
+---
 
-Nested routing keeps layout components (e.g. sidebar) persistent while switching inner content.
+### Protected Routes for Authentication
+A `ProtectedRoute` component checks authentication status from context and redirects unauthenticated users using `useNavigate`.
 
-Lazy Loading using React.lazy
-Top‑level pages (Homepage, Product, Pricing, AppLayout, Login, PageNotFound) are imported with React.lazy.
+This pattern ensures that sensitive routes are only accessible to authorized users.
 
-Splits bundle, defers loading of rarely‑used code and speeds up initial render.
+---
 
-Suspense for loading fallback UI
-A <Suspense> wrapper with SpinnerFullPage fallback surrounds the <Routes>.
+### Nested Routes using React Router and `Outlet`
+Routes under `/app` are nested. A layout component (e.g., `SideBar`) contains an `<Outlet />` that renders child routes such as the city list, city details, or forms.
 
-Provides a user-friendly loading indicator while chunks are fetched.
+Nested routing allows layout components (like navigation or sidebar) to stay visible while inner content changes.
 
-Custom Hooks
-useGeolocation encapsulates browser geolocation logic; useUrlPosition reads latitude/longitude from query parameters.
+---
 
-Promotes reuse and keeps components focused on presentation.
+### Lazy Loading using `React.lazy`
+Top-level pages (`Homepage`, `Product`, `Pricing`, `AppLayout`, `Login`, `PageNotFound`) are imported using `React.lazy`.
 
-useCallback
-getCity in CitiesContext is memoized with useCallback to avoid recreating the function on every render.
+This splits the JavaScript bundle and loads page code only when the user visits that route, improving initial load performance.
 
-Prevents unnecessary effects and re-renders, especially when passed as dependencies.
+---
 
-Component Composition & Reusable Components
-UI elements like Button, Spinner, Message, BackButton, PageNav, Logo etc. are small, self‑contained components used across pages.
+### Suspense for Loading Fallback UI
+A `<Suspense>` wrapper with `SpinnerFullPage` fallback surrounds the `<Routes>` component.
 
-Encourages DRY code and makes UI easy to maintain.
+This displays a loading indicator while lazy-loaded components are being downloaded.
 
-State Lifting via Context
-City data and authentication state are lifted out of leaf components into context providers, allowing many components to share and update the same state.
+---
 
-Simplifies state flow and avoids duplicating logic.
+### Custom Hooks
+Custom hooks like `useGeolocation` and `useUrlPosition` encapsulate reusable logic:
 
-Code Splitting
-Lazy imports ensure that only the code needed for the current route is downloaded.
+- `useGeolocation` handles browser geolocation API
+- `useUrlPosition` extracts latitude and longitude from URL query parameters
 
-Reduces initial payload and improves perceived performance.
+This keeps components clean and focused on UI rendering.
 
-Performance Optimization Techniques
-Beyond lazy/suspense and useCallback, loading states are handled gracefully with spinners, and the app avoids refetching data when the requested city is already active.
+---
 
-Leads to smoother UX and fewer network requests.
+### useCallback
+The `getCity` function in `CitiesContext` is memoized using `useCallback`.
 
-Loading States & Feedback
-Components show <Spinner> or <SpinnerFullPage> during async operations, and <Message> for empty/error conditions.
+This prevents the function from being recreated on every render and avoids unnecessary re-renders or effects.
 
-Keeps users informed and prevents UI flicker.
+---
 
-Folder Structure Best Practices
-The project segregates components/, pages/, contexts/, hooks/, and data/, with related CSS Modules alongside their components.
+### Component Composition & Reusable Components
+UI elements such as:
 
-Enhances maintainability and makes it easier to locate code.
+- `Button`
+- `Spinner`
+- `Message`
+- `BackButton`
+- `PageNav`
+- `Logo`
 
-🚀 What This Project Demonstrates
-This repository illustrates solid React architecture with a focus on scalability and maintainability. It employs Context + useReducer for state management, cleanly separates concerns with custom hooks, and implements routing patterns including protected and nested routes. Lazy loading and suspense show awareness of performance optimisation, while modular components and CSS Modules underscore reusable design. Overall, the code reflects an understanding of real‑world application needs—authentication, data fetching, user feedback, and responsive navigation.
+are designed as small reusable components.
 
-🛠 Technologies Used
-React (with hooks and functional components)
-React Router v6 (BrowserRouter, Routes, NavLink, Outlet)
-JavaScript (ES6+)
-Context API & useReducer
-CSS Modules for scoped styling
-React.lazy & Suspense for dynamic imports
-Custom hooks (useGeolocation, useUrlPosition)
-Third‑party libraries: react-datepicker, react-leaflet
+This encourages **DRY (Don't Repeat Yourself)** principles and makes the UI easier to maintain.
+
+---
+
+### State Lifting via Context
+City data and authentication state are lifted from individual components into context providers.
+
+This allows multiple components to access and update the same shared state without complex prop passing.
+
+---
+
+### Code Splitting
+Lazy imports ensure that only the JavaScript required for the current page is downloaded.
+
+This reduces the initial bundle size and improves application performance.
+
+---
+
+### Performance Optimization Techniques
+The application uses several performance optimizations:
+
+- `React.lazy` and `Suspense`
+- `useCallback` memoization
+- Efficient loading states
+- Avoiding redundant API requests when data is already available
+
+These techniques help create a smoother user experience.
+
+---
+
+### Loading States & User Feedback
+The UI displays feedback during asynchronous operations using components such as:
+
+- `<Spinner>`
+- `<SpinnerFullPage>`
+- `<Message>`
+
+This keeps users informed and prevents abrupt UI changes.
