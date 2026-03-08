@@ -110,3 +110,17 @@ The UI displays feedback during asynchronous operations using components such as
 - `<Message>`
 
 This keeps users informed and prevents abrupt UI changes.
+
+---
+
+## 🛠 Tech Stack
+
+- ⚛️ React (Hooks & Functional Components)
+- 🧭 React Router v6
+- 🟨 JavaScript (ES6+)
+- 🌐 Context API + useReducer
+- 🎨 CSS Modules
+- ⚡ React.lazy & Suspense
+- 🧩 Custom Hooks
+- 📍 react-leaflet
+- 📅 react-datepicker
