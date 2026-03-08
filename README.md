@@ -1,5 +1,5 @@
 ## ✅ Skills & Concepts Applied
-
+  
 ### useReducer
 Both `CitiesContext` and `FakeAuth` use **useReducer** to manage complex state transitions.  
 Actions like loading data, creating or deleting cities, and logging in/out are dispatched to a reducer that keeps state immutable and predictable.
